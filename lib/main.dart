@@ -1,19 +1,29 @@
+import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
+import 'splash.dart';
+import 'package:provider/provider.dart';
+// import '';
+// import 'homePage.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => MyAppState(),
+    child: MaterialApp(
+      title: 'Namer App',
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
+      ),
+      home: const Splash(),
+    ),
+  ));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyAppState extends ChangeNotifier {
+  var current = WordPair.random();
 
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      // title: 'Custom Fonts',
-      theme: ThemeData(fontFamily: 'Poppins')
-      // home: const MyHomePage(),
-    );
- }
+  void updateWordPair() {
+    current = WordPair.random();
+    notifyListeners();
+  }
 }
