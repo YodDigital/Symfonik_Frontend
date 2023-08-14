@@ -16,16 +16,16 @@ class _SplashState extends State<Splash> {
   void initState() {
     super.initState();
     // _navigateToHome();
-    // _setupMyHomePageListener();
-    // _onMyHomePageLoaded();
+    _setupMyHomePageListener();
+    _onMyHomePageLoaded();
   }
 
   Future<void> _onMyHomePageLoaded() async {
     // Do something when the MyHomePage is loaded.
-    await Future.delayed(Duration(milliseconds: 3000));
+    await Future.delayed(const Duration(milliseconds: 5000));
     if (mounted) {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => MyHomePage()));
+          context, MaterialPageRoute(builder: (context) => const MyHomePage()));
     }
   }
 
