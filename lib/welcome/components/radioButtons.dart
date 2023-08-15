@@ -2,6 +2,8 @@ export 'radioButtons.dart';
 
 import 'package:flutter/material.dart';
 
+import '../../utils/app_styles.dart';
+
 
 class radioButtons extends StatefulWidget {
   const radioButtons({super.key});
@@ -26,7 +28,7 @@ class _radioButtonsState extends State<radioButtons> {
             margin: EdgeInsets.only(left: 10, right: 10),
             child: Column(
               children: <Widget>[
-                Text(_genders[i]),
+                Text(_genders[i], style: TextStyle(color: Styles.orangeColor, fontWeight: FontWeight.bold, fontSize: 12)),
                 Radio(value: _genders[i], groupValue: _gender, onChanged: (value)=>{onSelect(_genders[i])}, activeColor: Color.fromRGBO(234, 158, 4, 1),)
               ],
             )

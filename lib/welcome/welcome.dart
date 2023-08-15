@@ -6,6 +6,8 @@ import 'components/textInput.dart';
 import 'components/radioButtons.dart';
 import 'components/chips.dart';
 
+import '../utils/app_styles.dart';
+
 class welcome extends StatefulWidget {
   const welcome({super.key});
 
@@ -34,7 +36,23 @@ class _welcomeState extends State<welcome> {
             children: <Widget>[
               Container(child: Image.asset("assets/PNGs/image.png"), width: 70, height: 70, margin: EdgeInsets.all(20),),
               Container(child: Text("Bienvenue sur")),
-              Container(child: Text("Symfonik"), margin: EdgeInsets.only(top: 10, bottom: 20),),
+              Container(
+                // child: Text("Symfonik", style: TextStyle(fontFamily: 'mamakilo')), margin: EdgeInsets.only(top: 10, bottom: 20),),
+                margin: EdgeInsets.only(top: 0, bottom: 20),
+                padding: EdgeInsets.all(0),
+                child: Text.rich(
+                  style: TextStyle(fontFamily: 'mamakilo', fontSize: 40),
+                  TextSpan(
+                    text: 'Symf',
+                    style: TextStyle(color: Styles.orangeColor),
+                    children: <InlineSpan>[
+                      TextSpan(
+                        text: 'onik',
+                        style: TextStyle(color: Styles.yellowColor)
+                      )
+                    ]
+                  )
+              )),
               Form(
                 onChanged: () {
                   setState(() {

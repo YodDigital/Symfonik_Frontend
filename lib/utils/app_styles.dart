@@ -1,3 +1,5 @@
+export 'app_styles.dart';
+
 import 'dart:ui';
 
 class Styles{
