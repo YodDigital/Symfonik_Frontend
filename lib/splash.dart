@@ -38,7 +38,7 @@ class _SplashState extends State<Splash> {
   Widget build(BuildContext context) {
     return WillPopScope(
         onWillPop: () async {
-          return Future.value(false);ùmmùùm
+          return Future.value(false);
         },
         child: Scaffold(
           body: Container(
